@@ -1,0 +1,2328 @@
+/* ============================================================
+   VIH JOVEN
+   ESTILOS.CSS - VERSIÓN FINAL
+
+   HTML5 + CSS3
+
+   Paleta:
+   Negro / Rojo / Celeste / Azul / Violeta / Blanco
+
+   ============================================================ */
+
+
+/* ============================================================
+   1. VARIABLES DE COLOR
+   ============================================================ */
+
+:root {
+
+    --negro: #05060a;
+    --negro-2: #090b12;
+    --negro-3: #10131c;
+    --tarjeta: #131824;
+
+    --rojo: #ff1744;
+    --rojo-neon: #ff003c;
+    --rojo-oscuro: #8b0a28;
+
+    --celeste: #00d9ff;
+    --azul: #087cff;
+
+    --violeta: #9b5cff;
+    --magenta: #e94cff;
+
+    --blanco: #ffffff;
+    --gris-claro: #dce6f0;
+    --gris: #9ba8b7;
+
+    --borde: rgba(0, 217, 255, 0.20);
+
+}
+
+
+/* ============================================================
+   2. RESETEO GENERAL
+   ============================================================ */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--negro);
+
+    color: var(--blanco);
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+
+}
+
+
+img {
+
+    max-width: 100%;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+}
+
+
+ul {
+
+    list-style: none;
+
+}
+
+
+/* ============================================================
+   3. FONDO ANIMADO
+   ============================================================ */
+
+.fondo-espacial {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: -1;
+
+}
+
+
+/* Estrellas */
+
+.estrella {
+
+    position: absolute;
+
+    color: var(--celeste);
+
+    font-size: 20px;
+
+    opacity: 0.6;
+
+    animation: parpadeo 3s infinite alternate;
+
+}
+
+
+.estrella-1 {
+
+    top: 18%;
+
+    left: 10%;
+
+}
+
+
+.estrella-2 {
+
+    top: 40%;
+
+    right: 13%;
+
+    color: var(--rojo);
+
+    animation-delay: 1s;
+
+}
+
+
+.estrella-3 {
+
+    top: 65%;
+
+    left: 20%;
+
+    color: var(--violeta);
+
+    animation-delay: 2s;
+
+}
+
+
+.estrella-4 {
+
+    top: 78%;
+
+    right: 30%;
+
+    animation-delay: 1.5s;
+
+}
+
+
+.estrella-5 {
+
+    top: 30%;
+
+    left: 55%;
+
+    color: var(--rojo);
+
+}
+
+
+/* Animación de parpadeo */
+
+@keyframes parpadeo {
+
+    from {
+
+        opacity: 0.2;
+
+        transform: scale(0.7);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1.2);
+
+    }
+
+}
+
+
+/* Meteoros */
+
+.meteoro {
+
+    position: absolute;
+
+    width: 2px;
+
+    height: 90px;
+
+    background:
+
+        linear-gradient(
+            transparent,
+            var(--celeste)
+        );
+
+    transform: rotate(45deg);
+
+    opacity: 0;
+
+    animation: meteorito 7s linear infinite;
+
+}
+
+
+.meteoro-1 {
+
+    top: -100px;
+
+    right: 20%;
+
+}
+
+
+.meteoro-2 {
+
+    top: -150px;
+
+    right: 60%;
+
+    animation-delay: 4s;
+
+    background:
+
+        linear-gradient(
+            transparent,
+            var(--rojo)
+        );
+
+}
+
+
+/* Movimiento del meteoro */
+
+@keyframes meteorito {
+
+    0% {
+
+        transform:
+            translate(0, 0)
+            rotate(45deg);
+
+        opacity: 0;
+
+    }
+
+    10% {
+
+        opacity: 1;
+
+    }
+
+    35% {
+
+        transform:
+            translate(-400px, 500px)
+            rotate(45deg);
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* ============================================================
+   4. HEADER
+   ============================================================ */
+
+header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 3px solid var(--rojo);
+
+    box-shadow:
+        0 5px 30px rgba(0, 0, 0, 0.35);
+
+}
+
+
+.header-contenedor {
+
+    max-width: 1300px;
+
+    margin: auto;
+
+    padding: 14px 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+/* ============================================================
+   5. LOGO
+   ============================================================ */
+
+.logo-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.logo-area img {
+
+    width: 55px;
+
+    height: 55px;
+
+    object-fit: contain;
+
+}
+
+
+.logo-area h1 {
+
+    color: #11151c;
+
+    font-size: 1.55rem;
+
+}
+
+
+.logo-area p {
+
+    color: #68717c;
+
+    font-size: 0.75rem;
+
+}
+
+
+/* ============================================================
+   6. NAVEGACIÓN
+   ============================================================ */
+
+header nav ul {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+}
+
+
+header nav a {
+
+    display: block;
+
+    padding: 9px 13px;
+
+    border-radius: 25px;
+
+    color: #252c35;
+
+    font-size: 0.88rem;
+
+    font-weight: bold;
+
+    transition: 0.3s ease;
+
+}
+
+
+header nav a:hover {
+
+    color: var(--rojo);
+
+    background: #fff0f3;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Botón especial de juegos */
+
+header nav .menu-juegos {
+
+    color: #ffffff;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--rojo),
+            var(--violeta)
+        );
+
+    box-shadow:
+        0 0 15px rgba(255, 23, 68, 0.25);
+
+}
+
+
+header nav .menu-juegos:hover {
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--violeta),
+            var(--rojo)
+        );
+
+}
+
+
+/* ============================================================
+   7. SECCIONES
+   ============================================================ */
+
+.seccion {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 100px 6%;
+
+    position: relative;
+
+}
+
+
+/* ============================================================
+   8. PORTADA
+   ============================================================ */
+
+.hero {
+
+    max-width: none;
+
+    min-height: 720px;
+
+    padding: 100px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.95fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 35%,
+            rgba(255, 23, 68, 0.18),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 85% 65%,
+            rgba(0, 217, 255, 0.14),
+            transparent 30%
+        );
+
+}
+
+
+.hero-contenido {
+
+    max-width: 700px;
+
+}
+
+
+.etiqueta-neon {
+
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    border: 1px solid var(--celeste);
+
+    border-radius: 30px;
+
+    color: var(--celeste);
+
+    font-size: 0.75rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    box-shadow:
+
+        0 0 15px rgba(0, 217, 255, 0.15);
+
+}
+
+
+.hero h2 {
+
+    margin-top: 20px;
+
+    margin-bottom: 25px;
+
+    font-size: clamp(3rem, 6vw, 5.5rem);
+
+    line-height: 0.95;
+
+}
+
+
+.hero h2 span,
+.mensaje-final h2 span {
+
+    color: var(--celeste);
+
+    text-shadow:
+
+        0 0 20px rgba(0, 217, 255, 0.35);
+
+}
+
+
+.hero-texto {
+
+    max-width: 650px;
+
+    color: var(--gris-claro);
+
+    font-size: 1.1rem;
+
+}
+
+
+/* ============================================================
+   9. BOTONES
+   ============================================================ */
+
+.hero-botones {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 25px;
+
+}
+
+
+.boton {
+
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: 0.3s ease;
+
+}
+
+
+.boton-rojo {
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--rojo),
+            var(--rojo-oscuro)
+        );
+
+    box-shadow:
+
+        0 0 25px rgba(255, 23, 68, 0.30);
+
+}
+
+
+.boton-rojo:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+
+        0 0 35px rgba(255, 23, 68, 0.55);
+
+}
+
+
+.boton-neon {
+
+    color: var(--celeste);
+
+    border: 1px solid var(--celeste);
+
+    background: rgba(0, 217, 255, 0.05);
+
+}
+
+
+.boton-neon:hover {
+
+    color: #001219;
+
+    background: var(--celeste);
+
+    box-shadow:
+
+        0 0 25px rgba(0, 217, 255, 0.45);
+
+}
+
+
+.boton-grande {
+
+    padding: 15px 35px;
+
+    margin-top: 30px;
+
+}
+
+
+/* ============================================================
+   10. DATOS DE LA PORTADA
+   ============================================================ */
+
+.hero-datos {
+
+    display: flex;
+
+    gap: 35px;
+
+    margin-top: 45px;
+
+}
+
+
+.hero-datos div {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.hero-datos strong {
+
+    color: var(--rojo);
+
+    font-size: 1.4rem;
+
+}
+
+
+.hero-datos span {
+
+    color: var(--gris);
+
+    font-size: 0.8rem;
+
+}
+
+
+/* ============================================================
+   11. IMAGEN DE PORTADA
+   ============================================================ */
+
+.hero-imagen {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.hero-imagen img {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    height: 500px;
+
+    object-fit: cover;
+
+    border-radius: 40px;
+
+    border: 2px solid var(--celeste);
+
+    position: relative;
+
+    z-index: 2;
+
+    box-shadow:
+
+        0 0 35px rgba(0, 217, 255, 0.25),
+
+        0 30px 70px rgba(0, 0, 0, 0.5);
+
+}
+
+
+.glow {
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: var(--rojo);
+
+    filter: blur(100px);
+
+    opacity: 0.18;
+
+}
+
+
+/* ============================================================
+   12. BURBUJAS DE LA PORTADA
+   ============================================================ */
+
+.burbuja {
+
+    position: absolute;
+
+    z-index: 5;
+
+    padding: 10px 16px;
+
+    background: rgba(10, 14, 23, 0.9);
+
+    border: 1px solid var(--celeste);
+
+    border-radius: 20px;
+
+    color: white;
+
+    font-weight: bold;
+
+    box-shadow:
+
+        0 0 20px rgba(0, 217, 255, 0.20);
+
+    animation: flotar 4s ease-in-out infinite;
+
+}
+
+
+.burbuja-1 {
+
+    top: 12%;
+
+    left: 0;
+
+}
+
+
+.burbuja-2 {
+
+    bottom: 20%;
+
+    right: 0;
+
+    border-color: var(--rojo);
+
+    animation-delay: 1s;
+
+}
+
+
+.burbuja-3 {
+
+    bottom: 5%;
+
+    left: 5%;
+
+    border-color: var(--violeta);
+
+    animation-delay: 2s;
+
+}
+
+
+@keyframes flotar {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-10px);
+
+    }
+
+}
+
+
+/* ============================================================
+   13. TÍTULOS DE SECCIÓN
+   ============================================================ */
+
+.titulo-seccion {
+
+    margin-bottom: 50px;
+
+}
+
+
+.titulo-seccion > span {
+
+    color: var(--rojo);
+
+    font-size: 0.75rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.titulo-seccion h2 {
+
+    font-size: 2.7rem;
+
+    margin-top: 10px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.titulo-seccion p {
+
+    max-width: 750px;
+
+    color: var(--gris);
+
+}
+
+
+/* ============================================================
+   14. TARJETAS DE CONOCIMIENTO
+   ============================================================ */
+
+.grid-tarjetas {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.tarjeta {
+
+    background:
+
+        linear-gradient(
+            145deg,
+            var(--tarjeta),
+            #0b0e15
+        );
+
+    border: 1px solid var(--borde);
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    transition: 0.35s ease;
+
+}
+
+
+.tarjeta:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow:
+
+        0 0 30px rgba(0, 217, 255, 0.12);
+
+}
+
+
+.tarjeta-imagen {
+
+    height: 230px;
+
+    overflow: hidden;
+
+}
+
+
+.tarjeta-imagen img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s ease;
+
+}
+
+
+.tarjeta:hover .tarjeta-imagen img {
+
+    transform: scale(1.07);
+
+}
+
+
+.tarjeta-icono {
+
+    font-size: 2rem;
+
+    margin: 20px 25px 5px;
+
+}
+
+
+.tarjeta h3 {
+
+    margin: 0 25px 12px;
+
+    color: var(--celeste);
+
+}
+
+
+.tarjeta p {
+
+    margin: 0 25px 30px;
+
+    color: var(--gris-claro);
+
+}
+
+
+/* Diferentes colores */
+
+.tarjeta-roja {
+
+    border-top: 4px solid var(--rojo);
+
+}
+
+
+.tarjeta-azul {
+
+    border-top: 4px solid var(--celeste);
+
+}
+
+
+.tarjeta-violeta {
+
+    border-top: 4px solid var(--violeta);
+
+}
+
+
+/* ============================================================
+   15. PREVENCIÓN
+   ============================================================ */
+
+.seccion-prevencion {
+
+    max-width: none;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(0, 123, 255, 0.15),
+            transparent 30%
+        );
+
+}
+
+
+.prevencion-layout {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+}
+
+
+.prevencion-imagen {
+
+    position: relative;
+
+}
+
+
+.prevencion-imagen img {
+
+    width: 100%;
+
+    height: 500px;
+
+    object-fit: cover;
+
+    border-radius: 35px;
+
+    border: 2px solid var(--rojo);
+
+    box-shadow:
+
+        0 0 35px rgba(255, 23, 68, 0.18);
+
+}
+
+
+.sticker {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    right: -15px;
+
+    width: 80px;
+
+    height: 80px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: var(--rojo);
+
+    border-radius: 50%;
+
+    font-size: 2rem;
+
+    box-shadow:
+
+        0 0 25px rgba(255, 23, 68, 0.45);
+
+}
+
+
+/* Tarjetas de prevención */
+
+.prevencion-contenido article {
+
+    display: flex;
+
+    gap: 20px;
+
+    background: var(--tarjeta);
+
+    padding: 25px;
+
+    margin-bottom: 18px;
+
+    border-left: 4px solid var(--celeste);
+
+    border-radius: 18px;
+
+}
+
+
+.numero {
+
+    color: var(--rojo);
+
+    font-size: 1.4rem;
+
+    font-weight: bold;
+
+}
+
+
+.prevencion-contenido h3 {
+
+    color: var(--celeste);
+
+    margin-bottom: 5px;
+
+}
+
+
+.prevencion-contenido p {
+
+    color: var(--gris);
+
+}
+
+
+/* ============================================================
+   16. MITOS
+   ============================================================ */
+
+#mitos {
+
+    background: var(--negro-2);
+
+}
+
+
+.mitos-contenedor {
+
+    display: grid;
+
+    grid-template-columns: 0.65fr 1.35fr;
+
+    gap: 40px;
+
+    align-items: center;
+
+}
+
+
+.mito-imagen {
+
+    position: relative;
+
+}
+
+
+.mito-imagen img {
+
+    width: 100%;
+
+    height: 420px;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    border: 2px solid var(--violeta);
+
+}
+
+
+.mito-badge {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 20px;
+
+    padding: 10px 18px;
+
+    background: var(--rojo);
+
+    color: white;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+}
+
+
+/* Tabla */
+
+.tabla-contenedor {
+
+    overflow-x: auto;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: var(--tarjeta);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+th {
+
+    padding: 18px;
+
+    text-align: left;
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--rojo-oscuro),
+            #400817
+        );
+
+}
+
+
+td {
+
+    padding: 18px;
+
+    color: var(--gris-claro);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+}
+
+
+tr:nth-child(even) td {
+
+    background: #171b25;
+
+}
+
+
+/* ============================================================
+   17. ¿SABÍAS QUE?
+   ============================================================ */
+
+.seccion-sabias {
+
+    background:
+
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(155, 92, 255, 0.16),
+            transparent 30%
+        );
+
+}
+
+
+.sabias-layout {
+
+    display: grid;
+
+    grid-template-columns: 0.7fr 1.3fr;
+
+    gap: 45px;
+
+    align-items: center;
+
+}
+
+
+.sabias-imagen img {
+
+    width: 100%;
+
+    height: 470px;
+
+    object-fit: cover;
+
+    border-radius: 35px;
+
+    border: 2px solid var(--violeta);
+
+    box-shadow:
+
+        0 0 30px rgba(155, 92, 255, 0.20);
+
+}
+
+
+.sabias-tarjetas article {
+
+    background: var(--tarjeta);
+
+    border-left: 4px solid var(--violeta);
+
+    margin-bottom: 18px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+}
+
+
+.sabias-tarjetas article > span {
+
+    font-size: 2rem;
+
+}
+
+
+.sabias-tarjetas h3 {
+
+    color: var(--violeta);
+
+    margin: 5px 0;
+
+}
+
+
+.sabias-tarjetas p {
+
+    color: var(--gris);
+
+}
+
+
+/* ============================================================
+   18. JUEGOS
+   ============================================================ */
+
+.juegos-seccion {
+
+    max-width: none;
+
+    min-height: 700px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 0.6fr;
+
+    align-items: center;
+
+    gap: 40px;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 40%,
+            rgba(255, 23, 68, 0.18),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(0, 217, 255, 0.13),
+            transparent 30%
+        );
+
+}
+
+
+.juegos-contenido {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.juegos-contenido h2 {
+
+    font-size: 4rem;
+
+    line-height: 1;
+
+    margin: 15px 0;
+
+}
+
+
+.juegos-contenido h2 span {
+
+    color: var(--rojo);
+
+    text-shadow:
+
+        0 0 20px rgba(255, 23, 68, 0.4);
+
+}
+
+
+.juegos-contenido > p {
+
+    max-width: 700px;
+
+    color: var(--gris-claro);
+
+}
+
+
+/* Tarjetas de juegos */
+
+.juegos-cartas {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+}
+
+
+.juego-card {
+
+    padding: 22px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #17131c,
+            #0c1018
+        );
+
+    border: 1px solid rgba(255, 23, 68, 0.30);
+
+    border-radius: 20px;
+
+    transition: 0.3s ease;
+
+}
+
+
+.juego-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: var(--rojo);
+
+    box-shadow:
+
+        0 0 25px rgba(255, 23, 68, 0.18);
+
+}
+
+
+.juego-icono {
+
+    font-size: 2.3rem;
+
+}
+
+
+.juego-card h3 {
+
+    margin: 10px 0;
+
+    color: white;
+
+}
+
+
+.juego-card p {
+
+    color: var(--gris);
+
+    font-size: 0.9rem;
+
+}
+
+
+/* Gato */
+
+.juego-gato {
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+.juego-gato img {
+
+    width: 430px;
+
+    height: 430px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid var(--celeste);
+
+    box-shadow:
+
+        0 0 50px rgba(0, 217, 255, 0.30);
+
+    animation: flotargato 5s ease-in-out infinite;
+
+}
+
+
+@keyframes flotargato {
+
+    0%,
+    100% {
+
+        transform: translateY(0) rotate(0deg);
+
+    }
+
+    50% {
+
+        transform: translateY(-15px) rotate(2deg);
+
+    }
+
+}
+
+
+/* Elementos decorativos */
+
+.juegos-fondo {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+}
+
+
+.juegos-fondo span {
+
+    position: absolute;
+
+    font-size: 2rem;
+
+    color: var(--celeste);
+
+    opacity: 0.3;
+
+    animation: flotar 5s infinite ease-in-out;
+
+}
+
+
+.juegos-fondo span:nth-child(1) {
+
+    top: 15%;
+
+    left: 5%;
+
+}
+
+
+.juegos-fondo span:nth-child(2) {
+
+    top: 70%;
+
+    left: 50%;
+
+    color: var(--rojo);
+
+}
+
+
+.juegos-fondo span:nth-child(3) {
+
+    top: 20%;
+
+    right: 35%;
+
+}
+
+
+.juegos-fondo span:nth-child(4) {
+
+    bottom: 10%;
+
+    right: 15%;
+
+}
+
+
+.juegos-fondo span:nth-child(5) {
+
+    top: 50%;
+
+    left: 45%;
+
+    color: var(--violeta);
+
+}
+
+
+/* ============================================================
+   19. ¿DÓNDE ACUDIR?
+   ============================================================ */
+
+.seccion-ayuda {
+
+    max-width: none;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #080d18,
+            #11192a
+        );
+
+}
+
+
+.ayuda-layout {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 0.75fr 1.25fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+}
+
+
+.ayuda-imagen {
+
+    position: relative;
+
+}
+
+
+.ayuda-imagen img {
+
+    width: 100%;
+
+    height: 450px;
+
+    object-fit: cover;
+
+    border-radius: 35px;
+
+    border: 2px solid var(--celeste);
+
+}
+
+
+.ayuda-globo {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    right: -15px;
+
+    padding: 12px 20px;
+
+    background: var(--celeste);
+
+    color: #00151c;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    box-shadow:
+
+        0 0 25px rgba(0, 217, 255, 0.35);
+
+}
+
+
+.ayuda-tarjetas {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.ayuda-tarjetas article {
+
+    background: var(--tarjeta);
+
+    padding: 25px;
+
+    border-top: 3px solid var(--celeste);
+
+}
+
+
+.ayuda-icono {
+
+    font-size: 2rem;
+
+}
+
+
+.ayuda-tarjetas h3 {
+
+    color: var(--celeste);
+
+    margin: 8px 0;
+
+}
+
+
+.ayuda-tarjetas p {
+
+    color: var(--gris);
+
+}
+
+
+/* ============================================================
+   20. FUENTES
+   ============================================================ */
+
+.fuentes-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.fuentes-grid article {
+
+    background: var(--tarjeta);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+}
+
+
+.fuentes-grid article > span {
+
+    font-size: 2.2rem;
+
+}
+
+
+.fuentes-grid h3 {
+
+    color: var(--celeste);
+
+    margin: 10px 0;
+
+}
+
+
+.fuentes-grid p {
+
+    color: var(--gris);
+
+}
+
+
+/* ============================================================
+   21. MENSAJE FINAL
+   ============================================================ */
+
+#mensaje-final {
+
+    max-width: none;
+
+    text-align: center;
+
+    padding: 110px 20px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255, 23, 68, 0.20),
+            transparent 50%
+        );
+
+}
+
+
+.corazon-neon {
+
+    display: block;
+
+    font-size: 4rem;
+
+    color: var(--rojo);
+
+    text-shadow:
+
+        0 0 30px rgba(255, 23, 68, 0.60);
+
+    animation: latido 1.5s infinite;
+
+}
+
+
+@keyframes latido {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.12);
+
+    }
+
+}
+
+
+#mensaje-final h2 {
+
+    font-size: 3rem;
+
+    margin: 15px 0;
+
+}
+
+
+.mensaje-final-contenido > p {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: var(--gris-claro);
+
+}
+
+
+/* ============================================================
+   22. FOOTER
+   ============================================================ */
+
+footer {
+
+    background: #030407;
+
+    padding: 55px 25px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255, 23, 68, 0.30);
+
+}
+
+
+.footer-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+}
+
+
+.footer-logo img {
+
+    width: 45px;
+
+    height: 45px;
+
+    object-fit: contain;
+
+}
+
+
+.footer-logo h2 {
+
+    color: var(--rojo);
+
+}
+
+
+footer p {
+
+    color: var(--gris);
+
+    margin: 10px 0;
+
+}
+
+
+footer nav {
+
+    margin: 25px 0;
+
+}
+
+
+footer nav ul {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+}
+
+
+footer nav a {
+
+    color: var(--celeste);
+
+    font-weight: bold;
+
+}
+
+
+footer nav a:hover {
+
+    color: white;
+
+}
+
+
+.copyright {
+
+    font-size: 0.8rem;
+
+}
+
+
+/* ============================================================
+   23. TABLETS
+   ============================================================ */
+
+@media (max-width: 1000px) {
+
+    .header-contenedor {
+
+        flex-direction: column;
+
+    }
+
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+
+    .hero-contenido {
+
+        margin: auto;
+
+    }
+
+
+    .hero-botones,
+    .hero-datos {
+
+        justify-content: center;
+
+    }
+
+
+    .grid-tarjetas {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .prevencion-layout,
+    .mitos-contenedor,
+    .sabias-layout,
+    .ayuda-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .prevencion-imagen,
+    .mito-imagen,
+    .sabias-imagen,
+    .ayuda-imagen {
+
+        max-width: 550px;
+
+        margin: auto;
+
+    }
+
+
+    .juegos-seccion {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+
+    .juegos-cartas {
+
+        max-width: 800px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .juego-gato {
+
+        margin-top: 20px;
+
+    }
+
+
+    .fuentes-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* ============================================================
+   24. CELULARES
+   ============================================================ */
+
+@media (max-width: 650px) {
+
+    .header-contenedor {
+
+        padding: 12px 15px;
+
+    }
+
+
+    header nav {
+
+        width: 100%;
+
+    }
+
+
+    header nav ul {
+
+        flex-direction: column;
+
+        width: 100%;
+
+    }
+
+
+    header nav li {
+
+        width: 100%;
+
+    }
+
+
+    header nav a {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+
+    .seccion {
+
+        padding: 70px 20px;
+
+    }
+
+
+    .hero {
+
+        min-height: auto;
+
+        padding: 80px 20px;
+
+    }
+
+
+    .hero h2 {
+
+        font-size: 3rem;
+
+    }
+
+
+    .hero-datos {
+
+        gap: 20px;
+
+    }
+
+
+    .hero-imagen img {
+
+        height: 350px;
+
+    }
+
+
+    .burbuja {
+
+        font-size: 0.75rem;
+
+        padding: 7px 10px;
+
+    }
+
+
+    .grid-tarjetas {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .tarjeta-imagen {
+
+        height: 220px;
+
+    }
+
+
+    .titulo-seccion h2 {
+
+        font-size: 2.2rem;
+
+    }
+
+
+    .prevencion-imagen img,
+    .mito-imagen img,
+    .sabias-imagen img,
+    .ayuda-imagen img {
+
+        height: 350px;
+
+    }
+
+
+    .juegos-contenido h2 {
+
+        font-size: 3rem;
+
+    }
+
+
+    .juegos-cartas {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .juego-gato img {
+
+        width: 300px;
+
+        height: 300px;
+
+    }
+
+
+    .ayuda-tarjetas {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .fuentes-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    #mensaje-final h2 {
+
+        font-size: 2.3rem;
+
+    }
+
+
+    footer nav ul {
+
+        flex-direction: column;
+
+    }
+
+}
+
+
+/* ============================================================
+   FIN DEL ARCHIVO
+   ============================================================ */
